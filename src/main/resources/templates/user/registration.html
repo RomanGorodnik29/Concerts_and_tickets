@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>com.company</title>
+
+    <style>
+
+        body {font-family: "Lato", sans-serif}
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="w3-top">
+    <div class="w3-bar w3-black w3-card">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="/static" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a href="/events" class="w3-bar-item w3-button w3-padding-large w3-hide-small">EVENTS</a>
+        <a href="/artists" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ARTISTS</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+        <div class="w3-dropdown-hover w3-hide-small">
+            <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                <a href="#" class="w3-bar-item w3-button">Account</a>
+                <a href="#" class="w3-bar-item w3-button">Ticket order</a>
+                <a href="#" class="w3-bar-item w3-button">Some</a>
+            </div>
+        </div>
+        <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+    </div>
+</div>
+
+<div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+    <h2 class="w3-wide w3-center">REGISTRATION</h2>
+    <p class="w3-opacity w3-center" ><i>After registration, you'll get access to all of our features</i></p>
+    <form method="post" th:action="@{/account/}" th:object="${credentialModel}" target="_blank">
+
+        <input th:field="*{email}" class="w3-input w3-border w3-center" style="margin-bottom: 10px; margin-top: 30px; margin-left: 240px; width: 300px" type="text" placeholder="Email" required name="Email">
+
+        <input th:field="*{password}" class="w3-input w3-border w3-center" style="width: 300px; margin-bottom: 10px; margin-left: 240px;" type="text" placeholder="Password" required name="Password">
+
+        <input class="w3-input w3-border w3-center" style="width: 300px; margin-left: 240px;" type="text" placeholder="Repeat password" required name="PasswordConfirm">
+        <button class="w3-button w3-black w3-section w3-right" style="margin-right: 265px" type="submit">REGISTRATE</button>
+        <a href="/auth" class="w3-button w3-black w3-section w3-right" style="margin-right: 10px;">SIGN UP</a>
+    </form>
+</div>
+
+<div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+    <h2 class="w3-wide w3-center">CONTACT</h2>
+    <p class="w3-opacity w3-center"><i>Drop a note!</i></p>
+    <div class="w3-row">
+        <div class="w3-col m6 w3-large w3-margin-bottom">
+            <i class="fa fa-map-marker" style="width:30px"></i> Chicago, US<br>
+            <i class="fa fa-phone" style="width:30px"></i> Phone: +00 151515<br>
+            <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
